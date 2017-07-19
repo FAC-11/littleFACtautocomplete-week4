@@ -1,0 +1,18 @@
+var names = {
+"Alina": "Alina is a female given name of Greek origin which means light",
+"Jen": "Origin of the name Jennifer: Cornish derivation of Guinevere, which is from the Welsh Gwenhwyfar (fair lady)",
+"Constantina": "In Italian the meaning of the name Constantina is: Constancy; steadfastness",
+"Yahia": "Yahya (John the Baptist) having been a prophet of Islam, Yahya is a very common name in the Muslim world.",
+"Amélie": "The name Amelie comes from the French origin. In French The meaning of the name Amelie is: Hard working. Industrious. Striving.",
+"Abdullah": " It is one of many Arabic theophoric names, meaning servant of God or God's slave. ",
+"Aisha": "Aisha is an indirect Quranic name for girls that means “alive”, “well-living”, “happily living”. Aisha was Prohpher Muhammad's favorite wife",
+"Tom": "Greek form of the Aramaic name תָּאוֹמָא (Ta'oma') which meant twin. In the New Testament this is the name of an apostle. ",
+"James": "A classic boys' name derived from the Hebrew name Jacob. It means supplanter, one who follows. ",
+"Aseal": "The word Aseel is an Arabic name and adjective that means: original, authentic, genuine, pure, origin, root, unique.",
+"Bart": "The name Bart is a Hebrew baby name. In Hebrew the meaning of the name Bart is: Ploughman",
+"Rachael": "ebrew the meaning of the name Rachael is: Ewe. Rachel was the second and favoured wife of Jacob in the Old Testament.",
+"Max": "Short for Maximilian (meaning greatest) and Maxwell (meaning great spring), but now often used on its own as a boys' name.",
+"Rebecca": "Rebecca is a name representing beauty in the Bible",
+"Minesh": "Minesh is an Indian name for boys meaning King of mina",
+"Dach": "The name Dakshina is an Indian baby name. In Indian the meaning of the name Dakshina is: Competent."
+}
