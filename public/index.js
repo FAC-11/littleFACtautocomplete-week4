@@ -29,7 +29,9 @@ function getApi (url) {
   xhr.send();
 }
 
-function displayNames () {
+function displayNames (responseObj) {
+
+
 
 }
 
