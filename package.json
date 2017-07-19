@@ -1,0 +1,29 @@
+{
+  "name": "name-autocompleter",
+  "version": "1.0.0",
+  "description": "Autocomplete project",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tape tests/*.test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-11/littleFACtautocomplete-week4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-11/littleFACtautocomplete-week4/issues"
+  },
+  "homepage": "https://github.com/FAC-11/littleFACtautocomplete-week4#readme",
+  "dependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
+  }
+}
