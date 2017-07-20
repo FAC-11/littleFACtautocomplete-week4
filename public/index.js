@@ -1,3 +1,19 @@
+var testObj = {
+  results:[
+         {
+             "name": "AliceBlue",
+             "hex": "#F0F8FF"
+         },
+         {
+             "name": "AntiqueWhite",
+             "hex": "#FAEBD7"
+         },
+         {
+             "name": "Aqua",
+             "hex": "#00FFFF"
+         }]
+}
+
 const userInput = document.getElementById("userSearch");
 const colourResults = document.getElementById('results');
 
@@ -13,9 +29,8 @@ function appendData(responseObj) {
   console.log(responseObj.results);
   responseObj.results.forEach(function(val) {
     const colourNode = document.createElement("li");
-    console.log("how many");
     colourNode.className = 'dropdown';
-    colourNode.textContent = val.name;
+    colourNode.textContent = val.name + ': ' + val.hex;
     colourResults.appendChild(colourNode);
     console.log(colourResults);
     const hexCode = val.hex;
@@ -28,6 +43,8 @@ function appendData(responseObj) {
   })
 };
 
+appendData(testObj);
+
 // cleanInput puts user input to lower case, replaces unfamiliar characters and passes value to urlBuilder
 function cleanInput(textInput) {
   console.log(textInput);
@@ -37,7 +54,9 @@ function cleanInput(textInput) {
 
 //urlBuilder creates the url using the clean user input
 function urlBuilder(userCleanInput) {
+
   var url = "http://localhost:4000/" + "search/" + userCleanInput;
+return url;
 }
 
 // http request function

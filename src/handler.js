@@ -35,10 +35,11 @@ function handleHTMLCSSJS(req,res) {
 
   // Serve index if nothing specified
   if (url === '/') {
-    url = 'index.html'
+    url = '/index.html'
   }
 
   const extension = url.split('.')[1];
+  console.log(extension);
   const extensionType = {
     html: 'text/html',
     css: 'text/css',
