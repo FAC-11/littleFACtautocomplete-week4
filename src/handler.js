@@ -4,67 +4,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const lib = require('../lib/lib.json');
 
-// const handleHomeRoute = (request, response) => {
-//   const filePath = path.join(__dirname, '..', 'public', 'index.html');
-//
-//   fs.readFile(filePath, (error, file) => {
-//     if (error) {
-//       console.log(error);
-//       response.writeHead(500, 'Content-Type: text/html');
-//       response.end("<h1> Sorry, it's not looking good, please try again.</h1>");
-//     } else {
-//       response.writeHead(200, 'Content-Type: text/html');
-//       response.end(file);
-//     }
-//   });
-// }
-//
-// const handlePublic = (request, response, url) => {
-//   const extension = url.split('.')[1];
-//   const extensionType = {
-//     html: 'text/html',
-//     css: 'text/css',
-//     js: 'application/javascript',
-//     ico: 'image/x-icon'
-//   };
-//   const filePath = path.join(__dirname, '..', url);
-//   fs.readFile(filePath, function(error, file) {
-//     if (error) {
-//       console.log(error);
-//       response.writeHead(500, 'Content-Type: text/html');
-//       response.end("<h1> Sorry, it's not looking good, please try again.</h1>");
-//     } else {
-//       response.writeHead(200, `Content-Type: ${extensionType[extension]}`);
-//       response.end(file);
-//     }
-//   });
-// }
-
-const database = [
-  {
-    name: 'Tom',
-    description: 'some description',
-  },
-  {
-    name: 'Bob',
-    description: 'some description',
-  },
-  {
-    name: 'Rob',
-    description: 'some description',
-  },
-  {
-    name: 'Finn',
-    description: 'some description',
-  },
-]
 //search checks if the input characters are parts of names in database. If so, as a result we will get an array of all matching names
 function search(word) {
   const lowerCaseWord = word.toLowerCase();
 
-  return database.filter(function(person){
-    const lowerCaseName = person.name.toLowerCase();
+  return lib.filter(function(colour){
+    const lowerCaseName = colour["name"].toLowerCase();
     return lowerCaseName.includes(lowerCaseWord);
   })
 }
@@ -101,8 +48,8 @@ function handleHTMLCSSJS(req,res) {
   fs.readFile(filePath, function(error, file) {
     if (error) {
       console.log(error);
-      res.writeHead(404, 'Content-Type: text/html');
-      res.end("<h1>404 not found.</h1>");
+      res.writeHead(500, 'Content-Type: text/html');
+      res.end("<h1> Sorry, it's not looking good, please try again.</h1>");
     } else {
       res.writeHead(200, `Content-Type: ${extensionType[extension]}`);
       res.end(file);
