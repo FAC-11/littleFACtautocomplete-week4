@@ -2,7 +2,8 @@ const userInput = document.getElementById("userSearch");
 const colourResults = document.getElementById('results');
 
 userInput.addEventListener('input', function(event) {
-  getApi(urlBuilder(cleanInput(event.value)), appendData);
+  console.log(event.target.value);
+  getApi(urlBuilder(cleanInput(event.target.value)), appendData);
   event.preventDefault();
 });
 
@@ -28,8 +29,9 @@ function appendData(responseObj) {
 };
 
 // cleanInput puts user input to lower case, replaces unfamiliar characters and passes value to urlBuilder
-function cleanInput(a) {
-  var userCleanInput = event.value.toLowerCase().replace(/[^a-z]/g, "");
+function cleanInput(textInput) {
+  console.log(textInput);
+  var userCleanInput = textInput.toLowerCase().replace(/[^a-z]/g, "");
   return userCleanInput;
 }
 
