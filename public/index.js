@@ -5,23 +5,11 @@ userInput.addEventListener('input', function(event) {
   event.preventDefault();
 });
 
-function appendData(data) {
-  var wordList = document.getElementById('userSearch');
-  wordList.innerHTML = '';
+function appendData(responseObj) {
+  userInput.innerHTML = '';
 
-  data.forEach(function(val) {
-    var option = document.createElement('li');
-    option.className += 'option-li';
-    var aLink = document.createElement('a');
-    aLink.className += 'option-a';
-    var googleLink = document.getElementsByTagName('a').href;
-    googleLink = 'http://google.com/search?q=' + encodeURI(val);
-    option.value = val;
-    option.innerHTML = val;
-    wordList.appendChild(aLink);
-    aLink.appendChild(option);
-    aLink.href = googleLink;
-    aLink.target = "_blank";
+  userInput.forEach(function(val) {
+  
 
   });
 
