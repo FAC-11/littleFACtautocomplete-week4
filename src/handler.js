@@ -10,24 +10,24 @@ function search(word) {
   return lib.filter(function(colour) {
     const lowerCaseName = colour["name"].toLowerCase();
     return lowerCaseName.includes(lowerCaseWord);
-  })
+  });
 }
 //handleSearch returns the server response with responseObject that contains an array of all matching results
-var prepareSearch = function prepareSearch(req, res) {
+var prepareSearch = function prepareSearch(req) {
+//var url = req.split('/')[1];
   const searchWord = req.url.replace('/search/', '');
   const responseObject = {
     results: search(searchWord)
   }
   return responseObject;
-  // res.writeHead(200, 'Content-Type: application/json');
-  // res.end(JSON.stringify(responseObject));
+
 }
 
 function handleSearch(req, res){
-
   res.writeHead(200, 'Content-Type: application/json');
   res.end(JSON.stringify(prepareSearch(req,res)));
 }
+
 // Check if the url requested is a file in the public folder
 // if so, it sends it
 // if not, 404
@@ -69,6 +69,8 @@ function handleHome(req, res) {
   });
 }
 module.exports = {
+  search,
+  prepareSearch,
   handleSearch,
   handleHome,
   handleHTMLCSSJS,
