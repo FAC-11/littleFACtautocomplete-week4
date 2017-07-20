@@ -6,21 +6,29 @@
 //filter library object function returns results object
 
 // event listener: 'input' is not supported by Internet Explorer
-document.getElementById("name").addEventListener('input', function(event) {
-  urlBuilder(name.value);
 
+// function to clean the userInput
+const userInput = document.getElementById("userSearch");
+userInput.addEventListener('input', function(event) {
+  cleanInput(userSearch.value)
 })
 
-function urlBuilder (inputValue, callback) {
-  var url = "http://localhost:4000/"+inputValue;
-  // api();
-
+// cleanInput puts user unput to lower case, replaces unfamiliar characters and passes value to urlBuilder
+function cleanInput(userSearch.value) {
+  var userCleanInput = userSearch.value.toLowerCase().replace(/[^a-z]/g, "");
+  urlBuilder(userCleanInput);
 }
 
-function getApi (url) {
+//urlBuilder creates the url using the clean user input
+function urlBuilder(userCleanInput, callback) {
+  var url = "http://localhost:4000/" + "search/" + userCleanInput;
+  // api();
+}
+
+function getApi(url) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
+    if (xhr.readyState == 4 && xhr.status == 200) {
       var responseObj = JSON.parse(xhr.responseText);
       displayNames(responseObj);
     }
@@ -29,10 +37,8 @@ function getApi (url) {
   xhr.send();
 }
 
-function displayNames (responseObj) {
-
-
-
+function displayNames(responseObj) {
+  document.createElement
 }
 
 // var fs = require('fs');
