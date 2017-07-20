@@ -32,7 +32,7 @@ function handleSearch(req, res){
 // if so, it sends it
 // if not, 404
 function handleHTMLCSSJS(req, res) {
-  let url = req.url
+  let url = req.url;
   const extension = url.split('.')[1];
   const extensionType = {
     html: 'text/html',
@@ -41,30 +41,38 @@ function handleHTMLCSSJS(req, res) {
     ico: 'image/x-icon'
   };
   const filePath = path.join(__dirname, '..', url);
-  console.log(filePath);
+
+  // console.log(filePath);
+  // console.log(url);
+  // console.log("hey hey");
   fs.readFile(filePath, function(error, file) {
     if (error) {
       console.log(error);
       res.writeHead(500, 'Content-Type: text/html');
       res.end("<h1> Sorry, it's not looking good, please try again.</h1>");
     } else {
+      // console.log("Im so and so")
+      // console.log(file);
       res.writeHead(200, `Content - Type: ${extensionType[extension]}`);
       res.end(file);
+        // console.log("yes");
     }
   });
 }
 
 function handleHome(req, res) {
   const filePath = path.join(__dirname, '..', 'public', "index.html");
-  console.log(filePath);
-  fs.readFile(filePath, function(error, file) {
+
+  fs.readFile(filePath, function (error, file) {
     if (error) {
-      console.log(error);
+
       res.writeHead(500, 'Content-Type: text/html');
       res.end("<h1> Sorry, it's not looking good, please try again.</h1>");
     } else {
+
       res.writeHead(200, 'Content-Type: text/html');
       res.end(file);
+
     }
   });
 }
