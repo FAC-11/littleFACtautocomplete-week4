@@ -1,31 +1,3 @@
-const testObj = {
-  results: [{
-      name: "DarkRed",
-      hex: "#8B0000"
-    },
-    {
-      name: "IndianRed ",
-      hex: "#CD5C5C"
-    },
-    {
-      name: "MediumVioletRed",
-      hex: "#C71585"
-    },
-    {
-      name: "OrangeRed",
-      hex: "#FF4500"
-    },
-    {
-      name: "PaleVioletRed",
-      hex: "#DB7093"
-    },
-    {
-      name: "Red",
-      hex: "#FF0000"
-    }
-  ]
-}
-
 const userInput = document.getElementById("userSearch");
 const colourResults = document.getElementById('results');
 
@@ -37,22 +9,23 @@ userInput.addEventListener('input', function(event) {
 // appendData function creates new list elements for results and creates another event listener for clicks on each one to return background colour change
 function appendData(responseObj) {
   colourResults.innerHTML = '';
+  console.log(responseObj.results);
   responseObj.results.forEach(function(val) {
     const colourNode = document.createElement("li");
+    console.log("how many");
     colourNode.className = 'dropdown';
     colourNode.textContent = val.name;
     colourResults.appendChild(colourNode);
     console.log(colourResults);
     const hexCode = val.hex;
-    colourResults.addEventListener('click', function(event) {
+    colourNode.addEventListener('click', function(event) {
       console.log("hello");
       const backgroundNode = document.getElementById('change-background');
-      backgroundNode.setAttribute('style', 'background-color:' + hexCode)
+      backgroundNode.setAttribute('style', 'background-color:' + hexCode);
+
     })
   })
 };
-
-appendData(testObj);
 
 // cleanInput puts user input to lower case, replaces unfamiliar characters and passes value to urlBuilder
 function cleanInput(a) {
