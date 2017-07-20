@@ -22,7 +22,7 @@ const handlers = require("./handler")
 
 function router(req, res) {
 
-  if (req.url.includes('/autocomplete')){
+  if (req.url.includes('/search')){
     return handlers.handleSearch(req,res)
   }
 

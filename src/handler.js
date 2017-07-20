@@ -59,25 +59,24 @@ const database = [
     description: 'some description',
   },
 ]
-
+//search checks if the input characters are parts of names in database. If so, as a result we will get an array of all matching names
 function search(word) {
-  const lowerCaseWord = word.toLowerCase()
+  const lowerCaseWord = word.toLowerCase();
 
   return database.filter(function(person){
-    const lowerCaseName = person.name.toLowerCase()
-    return lowerCaseName.includes(lowerCaseWord)
+    const lowerCaseName = person.name.toLowerCase();
+    return lowerCaseName.includes(lowerCaseWord);
   })
 }
-
+//handleSearch returns the server response with responseObject that contains an array of all matching results
 function handleSearch(req,res) {
-  //find results for autocomplete
-  const searchWord = req.url.replace('/autocomplete/','')
+  const searchWord = req.url.replace('/search/','')
   const responseObject = {
     results: search(searchWord)
   }
 
   res.writeHead(200, 'Content-Type: application/json');
-  res.end(JSON.stringify(responseObject))
+  res.end(JSON.stringify(responseObject));
 }
 
 // Check if the url requested is a file in the public folder
