@@ -21,9 +21,10 @@ function handleSearch(req,res) {
   const responseObject = {
     results: search(searchWord)
   }
+  return responseObject;
 
-  res.writeHead(200, 'Content-Type: application/json');
-  res.end(JSON.stringify(responseObject));
+  // res.writeHead(200, 'Content-Type: application/json');
+  // res.end(JSON.stringify(responseObject));
 }
 
 // Check if the url requested is a file in the public folder
