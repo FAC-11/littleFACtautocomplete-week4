@@ -31,9 +31,12 @@ function handleSearch(req, res){
 // Check if the url requested is a file in the public folder
 // if so, it sends it
 // if not, 404
+
 function handleHTMLCSSJS(req, res) {
   let url = req.url;
+
   const extension = url.split('.')[1];
+  console.log(extension);
   const extensionType = {
     html: 'text/html',
     css: 'text/css',

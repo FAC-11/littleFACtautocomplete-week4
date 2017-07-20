@@ -1,0 +1,62 @@
+body {
+  background-color: lightgrey;
+  text-align: center;
+  margin: 0 2vw;
+  font-family: 'Lemonada', cursive;
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 6vw;
+  padding: none;
+  border-style: solid;
+  border-width: 0.5vw;
+  background-color: white;
+}
+
+input[type='text'] {
+  font-size: 3vw;
+  padding: 1vw;
+  border-style: solid;
+  border-width: 0.5vw;
+  border-color: black;
+  background-color: white;
+  font-family: 'Lemonada', cursive;
+  text-align: center;
+}
+
+input:focus {
+    background-color: lightpink;
+}
+
+li {
+  list-style: none;
+  border-style: solid;
+  border-width: 0.3vw;
+  background-color: white;
+  margin: 0.8vw;
+  padding: 0.7vw;
+  font-size: 1.4vw;
+}
+
+#results {
+  margin: 2vw 10vw;
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 8vw;
+  }
+
+  input[type='text'] {
+    font-size: 6vw;
+    width: 90vw;
+  }
+
+  li {
+    margin: 1.2vw;
+    font-size: 4vw;
+  }
+
+}
