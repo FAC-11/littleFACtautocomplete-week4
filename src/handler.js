@@ -34,9 +34,7 @@ function handleHTMLCSSJS(req,res) {
   let url = req.url
 
   // Serve index if nothing specified
-  if (url === '/') {
-    url = 'index.html'
-  }
+
 
   const extension = url.split('.')[1];
   const extensionType = {
@@ -45,7 +43,8 @@ function handleHTMLCSSJS(req,res) {
     js: 'application/javascript',
     ico: 'image/x-icon'
   };
-  const filePath = path.join(__dirname, '..', '/public', url);
+  const filePath = path.join(__dirname, '..', url);
+  console.log(filePath);
   fs.readFile(filePath, function(error, file) {
     if (error) {
       console.log(error);
@@ -57,7 +56,24 @@ function handleHTMLCSSJS(req,res) {
     }
   });
 }
+
+
+const handleHome = (req,res) => {
+  const filePath = path.join(__dirname, '..', 'public', "index.html");
+  console.log(filePath)
+  fs.readFile(filePath, function (error, file) {
+    if (error) {
+      console.log(error);
+      res.writeHead(500, 'Content-Type: text/html');
+      res.end("<h1> Sorry, it's not looking good, please try again.</h1>");
+    } else {
+      res.writeHead(200, 'Content-Type: text/html');
+      res.end(file);
+    }
+  });
+}
 module.exports = {
   handleSearch,
+  handleHome,
   handleHTMLCSSJS,
 }
