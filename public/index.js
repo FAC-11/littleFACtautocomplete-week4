@@ -1,51 +1,57 @@
-//This is where all the functions go that take the typed input and return data/functions
-
-// Event listener function -- on click - you know your deal
-//url builder function --returns url
-//API request function -- http request with callback(null, results)
-//filter library object function returns results object
-
-// event listener: 'input' is not supported by Internet Explorer
-
-// function to clean the userInput
 const userInput = document.getElementById("userSearch");
+
 userInput.addEventListener('input', function(event) {
-  cleanInput(userSearch.value)
-})
+  getApi(urlBuilder(cleanInput(event.value)), appendData);
+  event.preventDefault();
+});
 
-// cleanInput puts user unput to lower case, replaces unfamiliar characters and passes value to urlBuilder
-function cleanInput(userSearch.value) {
-  var userCleanInput = userSearch.value.toLowerCase().replace(/[^a-z]/g, "");
-  urlBuilder(userCleanInput);
-}
+function appendData(data) {
+  var wordList = document.getElementById('userSearch');
+  wordList.innerHTML = '';
 
-//urlBuilder creates the url using the clean user input
-function urlBuilder(userCleanInput, callback) {
-  var url = "http://localhost:4000/" + "search/" + userCleanInput;
-  // api();
-}
+  data.forEach(function(val) {
+    var option = document.createElement('li');
+    option.className += 'option-li';
+    var aLink = document.createElement('a');
+    aLink.className += 'option-a';
+    var googleLink = document.getElementsByTagName('a').href;
+    googleLink = 'http://google.com/search?q=' + encodeURI(val);
+    option.value = val;
+    option.innerHTML = val;
+    wordList.appendChild(aLink);
+    aLink.appendChild(option);
+    aLink.href = googleLink;
+    aLink.target = "_blank";
 
-function getApi(url) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      var responseObj = JSON.parse(xhr.responseText);
-      displayNames(responseObj);
-    }
+  });
+
+  //This is where all the functions go that take the typed input and return data/functions
+
+  function displayColours(responseObj) {
+    document.createElement;
   }
-  xhr.open("GET", url, true);
-  xhr.send();
-}
 
-function displayNames(responseObj) {
-  document.createElement
-}
+  // cleanInput puts user unput to lower case, replaces unfamiliar characters and passes value to urlBuilder
+  function cleanInput(event.value) {
+    var userCleanInput = event.value.toLowerCase().replace(/[^a-z]/g, "");
+    return userCleanInput;
+  }
 
-// var fs = require('fs');
-// var autocomplete = {};
-//
-//
-//
-//
-//
-// module.exports = autocomplete;
+  //urlBuilder creates the url using the clean user input
+  function urlBuilder(userCleanInput) {
+    var url = "http://localhost:4000/" + "search/" + userCleanInput;
+    // api();
+  }
+
+  // http request function
+  function getApi(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var responseObj = JSON.parse(xhr.responseText);
+        displayColours(responseObj);
+      }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
+  }
