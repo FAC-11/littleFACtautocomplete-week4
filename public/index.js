@@ -1,45 +1,45 @@
-//This is where all the functions go that take the typed input and return data/functions
+const userInput = document.getElementById("userSearch");
 
-// Event listener function -- on click - you know your deal
-//url builder function --returns url
-//API request function -- http request with callback(null, results)
-//filter library object function returns results object
+userInput.addEventListener('input', function(event) {
+  getApi(urlBuilder(cleanInput(event.value)), appendData);
+  event.preventDefault();
+});
 
-// event listener: 'input' is not supported by Internet Explorer
-document.getElementById("name").addEventListener('input', function(event) {
-  urlBuilder(name.value);
+function appendData(responseObj) {
+  userInput.innerHTML = '';
 
-})
+  userInput.forEach(function(val) {
+  
 
-function urlBuilder (inputValue, callback) {
-  var url = "http://localhost:4000/"+inputValue;
-  // api();
+  });
 
-}
+  //This is where all the functions go that take the typed input and return data/functions
 
-function getApi (url) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-      var responseObj = JSON.parse(xhr.responseText);
-      displayNames(responseObj);
-    }
+  function displayColours(responseObj) {
+    document.createElement;
   }
-  xhr.open("GET", url, true);
-  xhr.send();
-}
 
-function displayNames (responseObj) {
+  // cleanInput puts user unput to lower case, replaces unfamiliar characters and passes value to urlBuilder
+  function cleanInput(event.value) {
+    var userCleanInput = event.value.toLowerCase().replace(/[^a-z]/g, "");
+    return userCleanInput;
+  }
 
+  //urlBuilder creates the url using the clean user input
+  function urlBuilder(userCleanInput) {
+    var url = "http://localhost:4000/" + "search/" + userCleanInput;
+    // api();
+  }
 
-
-}
-
-// var fs = require('fs');
-// var autocomplete = {};
-//
-//
-//
-//
-//
-// module.exports = autocomplete;
+  // http request function
+  function getApi(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        var responseObj = JSON.parse(xhr.responseText);
+        displayColours(responseObj);
+      }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
+  }
