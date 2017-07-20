@@ -30,6 +30,12 @@ test('prepareSearch', function(t) {
   var expected = {
     results: library.object1
   };
+  t.deepEqual(actual, expected, "should return an object containing an array of key-value pairs with values equal to url with '/search/' removed");
+  t.end();
+});
+test('prepareSearch', function(t) {
+  var actual = handler.prepareSearch(library.object3);
+  var expected = {results: []};
   t.deepEqual(actual, expected, 'should return an object containing key-value pair, in which value is an empty array, if no match is found');
   t.end();
 });

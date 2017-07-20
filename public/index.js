@@ -53,7 +53,3 @@ function getApi(url, cb) {
   xhr.open("GET", url, true);
   xhr.send();
 }
-
-// module.exports = {
-//   urlBuilder
-// };
