@@ -1,19 +1,3 @@
-var testObj = {
-  results:[
-         {
-             "name": "AliceBlue",
-             "hex": "#F0F8FF"
-         },
-         {
-             "name": "AntiqueWhite",
-             "hex": "#FAEBD7"
-         },
-         {
-             "name": "Aqua",
-             "hex": "#00FFFF"
-         }]
-}
-
 const userInput = document.getElementById("userSearch");
 const colourResults = document.getElementById('results');
 
@@ -43,8 +27,6 @@ function appendData(responseObj) {
   })
 };
 
-appendData(testObj);
-
 // cleanInput puts user input to lower case, replaces unfamiliar characters and passes value to urlBuilder
 function cleanInput(textInput) {
   console.log(textInput);
@@ -56,7 +38,7 @@ function cleanInput(textInput) {
 function urlBuilder(userCleanInput) {
 
   var url = "http://localhost:4000/" + "search/" + userCleanInput;
-return url;
+  return url;
 }
 
 // http request function
