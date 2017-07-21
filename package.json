@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "tape tests/*.test.js | tap-spec",
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "nodemon": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
