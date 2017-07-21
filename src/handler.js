@@ -14,7 +14,7 @@ function search(word) {
 }
 //handleSearch returns the server response with responseObject that contains an array of all matching results
 var prepareSearch = function prepareSearch(req) {
-//var url = req.split('/')[1];
+
   const searchWord = req.url.replace('/search/', '');
   const responseObject = {
     results: search(searchWord)
@@ -23,9 +23,9 @@ var prepareSearch = function prepareSearch(req) {
 
 }
 
-function handleSearch(req, res){
+function handleSearch(req, res) {
   res.writeHead(200, 'Content-Type: application/json');
-  res.end(JSON.stringify(prepareSearch(req,res)));
+  res.end(JSON.stringify(prepareSearch(req, res)));
 }
 
 // Check if the url requested is a file in the public folder
@@ -45,20 +45,14 @@ function handleHTMLCSSJS(req, res) {
   };
   const filePath = path.join(__dirname, '..', url);
 
-  // console.log(filePath);
-  // console.log(url);
-  // console.log("hey hey");
   fs.readFile(filePath, function(error, file) {
     if (error) {
       console.log(error);
       res.writeHead(500, 'Content-Type: text/html');
       res.end("<h1> Sorry, it's not looking good, please try again.</h1>");
     } else {
-      // console.log("Im so and so")
-      // console.log(file);
       res.writeHead(200, `Content - Type: ${extensionType[extension]}`);
       res.end(file);
-        // console.log("yes");
     }
   });
 }
@@ -66,7 +60,7 @@ function handleHTMLCSSJS(req, res) {
 function handleHome(req, res) {
   const filePath = path.join(__dirname, '..', 'public', "index.html");
 
-  fs.readFile(filePath, function (error, file) {
+  fs.readFile(filePath, function(error, file) {
     if (error) {
 
       res.writeHead(500, 'Content-Type: text/html');
