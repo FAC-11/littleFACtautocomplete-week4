@@ -12,9 +12,11 @@ We decided to build a colour picker app so that developers can easily find the s
 Not all goals were met during the allotted time and we'll try to explain why in this readme. 
 
 ## Our approach
-* **Software Architecture**: we laid out on a whiteboard what the experience of using our site should involve with the paths and connections to each aspect drawn out.
 * **Modularisation**: we wrote down the structure of our folders and the files that should be contained within them to get a sense of how they link together and what functions each should contain.
-* ![Architecture Flowchart] ()
+![File Architecture](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/I6si/IMG_1665.JPG)
+* **Software Architecture**: we laid out on a whiteboard what the experience of using our site should involve with the paths and connections to each aspect drawn out.
+![Software Architecture Flowchart](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/cHyx/node_littleFACt.png)
+![Software Diagram](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/7HFX/Untitled-Diagram.jpg)
 * **Divide & Conquer**: once we had an idea of how things should flow, we decided how to split up tasks and begin.
 
 ## "It works! How did we do that??"
@@ -33,12 +35,10 @@ We divided up tasks into front end and back end with a pair taking on each side 
 
 1. We kind of succeeded with building the function that created the response object to the XHR request, but we spent ages trying to figure out why our page didn’t load plain index.html. And the lesson we learnt is that we should be attentive to our small mistakes, like typos or closing if functions with else statements. 
 
-## What we learned
-Do we need this section?
-
 ## Good links
 * [Collaborative readMe](https://hackmd.io/)! Props go to @astroash for sharing this and making this our most beautiful readme yet. :heart_eyes:
-* what else?
+* [includes() method](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+* [Why Do We Need Modules](http://requirejs.org/docs/why.html)
 
 Final shoutout to @mineshmshah for providing chocolate when we most needed it. :chocolate_bar:
 
