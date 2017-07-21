@@ -25,7 +25,7 @@ var prepareSearch = function prepareSearch(req) {
 
 function handleSearch(req, res) {
   res.writeHead(200, 'Content-Type: application/json');
-  res.end(JSON.stringify(prepareSearch(req, res)));
+  res.end(JSON.stringify(prepareSearch(req)));
 }
 
 // Check if the url requested is a file in the public folder
