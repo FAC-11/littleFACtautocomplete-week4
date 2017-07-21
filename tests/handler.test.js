@@ -2,25 +2,29 @@ var test = require('tape');
 var handler = require('../src/handler.js');
 var library = require('./lib.test.js')
 
-test('search', function(t) {
+//Here we test search function
+test('search: it should return an array of results', function(t) {
   var actual = handler.search('Fire');
   var expected = [{hex: "#B22222", name: "FireBrick" }];
   t.deepEqual(actual, expected, 'should return an array of objects');
   t.end();
 });
 
-test('search', function(t) {
+test('search: it should return an array of multiple results', function(t) {
   var actual = handler.search('Deep');
-  var expected = library.object1;
+  var expected = [{hex: "#FF1493",name: "DeepPink"},{hex: "#00BFFF",name: "DeepSkyBlue"}];
   t.deepEqual(actual, expected, 'works for multiple search results');
   t.end();
 });
-test('search', function(t) {
+
+test('search: it should return an empty array if no matches', function(t) {
   var actual = handler.search('hello');
   var expected = [];
   t.deepEqual(actual, expected, 'should return an empty array if there no match is found');
   t.end();
 });
+
+
 // test('prepareSearch', function(t) {
 //  //var req.url = "/search/hello";
 //   var actual = handler.prepareSearch("localhost:4000/search/hello");

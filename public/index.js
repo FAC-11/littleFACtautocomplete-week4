@@ -1,11 +1,11 @@
-const userInput = document.getElementById("userSearch");
-const colourResults = document.getElementById('results');
+  const userInput = document.getElementById("userSearch");
+  const colourResults = document.getElementById('results');
 
-userInput.addEventListener('input', function(event) {
-  console.log(event.target.value);
-  getApi(urlBuilder(cleanInput(event.target.value)), appendData);
-  event.preventDefault();
-});
+  userInput.addEventListener('input', function(event) {
+    console.log(event.target.value);
+    getApi(urlBuilder(cleanInput(event.target.value)), appendData);
+    event.preventDefault();
+  });
 
 // appendData function creates new list elements for results and creates another event listener for clicks on each one to return background colour change
 function appendData(responseObj) {
@@ -54,6 +54,8 @@ function getApi(url, cb) {
   xhr.send();
 }
 
-// module.exports = {
-//   urlBuilder
-// };
+if (module) {
+  module.exports = {
+    urlBuilder: urlBuilder
+  }
+}
