@@ -26,7 +26,7 @@ input[type='text'] {
 }
 
 input:focus {
-    background-color: lightpink;
+  background-color: lightpink;
 }
 
 li {
@@ -37,6 +37,7 @@ li {
   margin: 0.8vw;
   padding: 0.7vw;
   font-size: 1.4vw;
+  cursor: pointer;
 }
 
 #results {
@@ -44,19 +45,15 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
-
   h1 {
     font-size: 8vw;
   }
-
   input[type='text'] {
     font-size: 6vw;
     width: 90vw;
   }
-
   li {
     margin: 1.2vw;
     font-size: 4vw;
   }
-
 }
