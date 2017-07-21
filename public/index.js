@@ -13,7 +13,7 @@ function appendData(responseObj) {
   console.log(responseObj.results);
   responseObj.results.forEach(function(val) {
     const colourNode = document.createElement("li");
-    colourNode.className = 'dropdown';
+    colourNode.tabIndex = '0';
     colourNode.textContent = val.name + ': ' + val.hex;
     colourResults.appendChild(colourNode);
     console.log(colourResults);
