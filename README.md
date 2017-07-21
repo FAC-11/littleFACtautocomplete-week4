@@ -13,8 +13,10 @@ Not all goals were met during the allotted time and we'll try to explain why in 
 
 ## Our approach
 * **Software Architecture**: we laid out on a whiteboard what the experience of using our site should involve with the paths and connections to each aspect drawn out.
+![Software Architecture Flowchart](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/cHyx/node_littleFACt.png)
+![Software Diagram](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/7HFX/Untitled-Diagram.jpg)
 * **Modularisation**: we wrote down the structure of our folders and the files that should be contained within them to get a sense of how they link together and what functions each should contain.
-* ![Architecture Flowchart] ()
+![File Architecture](https://files.gitter.im/foundersandcoders/Team-AmAlConYah/I6si/IMG_1665.JPG)
 * **Divide & Conquer**: once we had an idea of how things should flow, we decided how to split up tasks and begin.
 
 ## "It works! How did we do that??"
