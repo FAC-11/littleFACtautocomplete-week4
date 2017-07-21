@@ -9,6 +9,7 @@ function router(req, res) {
     handler.handleHome(req, res);
 
   } else if (req.url.includes('public')) {
+
     handler.handleHTMLCSSJS(req, res);
 
   } else if (req.url.includes('/search')) {

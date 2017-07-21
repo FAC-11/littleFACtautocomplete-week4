@@ -1,6 +1,3 @@
-// function DEFINITIONS ONLY - not to be called in here
-//1 function reading all files
-//1 function which returns results object for a given url
 const fs = require('fs');
 const path = require('path');
 const lib = require('../lib/lib.json');
@@ -28,9 +25,6 @@ function handleSearch(req, res) {
   res.end(JSON.stringify(prepareSearch(req)));
 }
 
-// Check if the url requested is a file in the public folder
-// if so, it sends it
-// if not, 404
 
 function handleHTMLCSSJS(req, res) {
   const url = req.url;
