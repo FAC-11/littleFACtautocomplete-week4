@@ -36,7 +36,6 @@ function handleHTMLCSSJS(req, res) {
   let url = req.url;
 
   const extension = url.split('.')[1];
-  console.log(extension);
   const extensionType = {
     html: 'text/html',
     css: 'text/css',
