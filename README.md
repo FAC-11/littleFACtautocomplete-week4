@@ -37,6 +37,8 @@ We divided up tasks into front end and back end with a pair taking on each side 
 
 ## Good links
 * [Collaborative readMe](https://hackmd.io/)! Props go to @astroash for sharing this and making this our most beautiful readme yet. :heart_eyes:
+* [includes()] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+* [Why do we need modules] (http://requirejs.org/docs/why.html)
 
 Final shoutout to @mineshmshah for providing chocolate when we most needed it. :chocolate_bar:
 
