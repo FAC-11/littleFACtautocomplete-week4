@@ -9,7 +9,7 @@ function cleanInput(textInput) {
 //urlBuilder creates the url using the clean user input
 function urlBuilder(userCleanInput) {
 
-  var url = "http://localhost:4000/" + "search/" + userCleanInput;
+  var url = "search/" + userCleanInput;
   return url;
 }
 
