@@ -7,7 +7,7 @@ We decided to build a colour picker app so that developers can easily find the s
 - [x] Dynamically give autocomplete suggestions
 - [x] Use a large data file to search/filter from but maintain speed
 - [ ] Back-end testing using tape and basic front-end testing
-- [ ] Host our site on Heroku
+- [x] Host our site on Heroku
 
 Not all goals were met during the allotted time and we'll try to explain why in this readme. 
 
