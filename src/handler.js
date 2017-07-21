@@ -22,15 +22,14 @@ var prepareSearch = function prepareSearch(req) {
 
 function handleSearch(req, res) {
   res.writeHead(200, 'Content-Type: application/json');
-  res.end(JSON.stringify(prepareSearch(req, res)));
+  res.end(JSON.stringify(prepareSearch(req)));
 }
 
 
 function handleHTMLCSSJS(req, res) {
-  let url = req.url;
+  const url = req.url;
 
   const extension = url.split('.')[1];
-  console.log(extension);
   const extensionType = {
     html: 'text/html',
     css: 'text/css',
