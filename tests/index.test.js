@@ -19,7 +19,7 @@ test('cleanInput', function(t) {
 
 test('urlBuilder', function(t) {
   var actual = index.urlBuilder("apples");
-  var expected = "http://localhost:4000/" + "search/" + "apples";
+  var expected =  "search/" + "apples";
   t.equal(actual, expected, 'should concatenate');
   t.end();
 });
