@@ -2,7 +2,6 @@ var userInput = document.getElementById("userSearch");
 var colourResults = document.getElementById('results');
 
 userInput.addEventListener('input', function(event) {
-  console.log(event.target.value);
   getApi(urlBuilder(cleanInput(event.target.value)), appendData);
   event.preventDefault();
 });
@@ -10,16 +9,13 @@ userInput.addEventListener('input', function(event) {
 // appendData function creates new list elements for results and creates another event listener for clicks on each one to return background colour change
 function appendData(responseObj) {
   colourResults.innerHTML = '';
-  console.log(responseObj.results);
   responseObj.results.forEach(function(val) {
     var colourNode = document.createElement("li");
     colourNode.tabIndex = '0';
     colourNode.textContent = val.name + ': ' + val.hex;
     colourResults.appendChild(colourNode);
-    console.log(colourResults);
     var hexCode = val.hex;
     colourNode.addEventListener('click', function(event) {
-      console.log("hello");
       var backgroundNode = document.getElementById('change-background');
       backgroundNode.setAttribute('style', 'background-color:' + hexCode);
 
@@ -29,7 +25,6 @@ function appendData(responseObj) {
 
 // cleanInput puts user input to lower case, replaces unfamiliar characters and passes value to urlBuilder
 function cleanInput(textInput) {
-  console.log(textInput);
   var userCleanInput = textInput.toLowerCase().replace(/[^a-z]/g, "");
   return userCleanInput;
 }
