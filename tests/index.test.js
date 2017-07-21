@@ -1,3 +1,17 @@
+var test = require('tape');
+//urlBuilder creates the url using the clean user input
+var index = require('../public/index');
+
+test('urlBuilder: it should build the URL string', function(t) {
+  var actual = index.urlBuilder('apple');
+  var expected = "http://localhost:4000/" + "search/" + 'apple';
+  t.equal(actual, expected, 'should return a new string');
+  t.end();
+});
+
+
+
+
 // var test = require('tape');
 // var index = require('../public/index.js');
 //
