@@ -40,6 +40,11 @@ li {
   cursor: pointer;
 }
 
+li:hover {
+  border-width: 0.6vw; 
+}
+
+
 #results {
   margin: 2vw 10vw;
 }

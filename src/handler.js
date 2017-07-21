@@ -33,7 +33,7 @@ function handleSearch(req, res) {
 // if not, 404
 
 function handleHTMLCSSJS(req, res) {
-  let url = req.url;
+  const url = req.url;
 
   const extension = url.split('.')[1];
   console.log(extension);
