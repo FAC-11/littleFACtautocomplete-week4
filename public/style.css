@@ -39,6 +39,11 @@ li {
   font-size: 1.4vw;
 }
 
+li:hover {
+  border-width: 0.6vw; 
+}
+
+
 #results {
   margin: 2vw 10vw;
 }
